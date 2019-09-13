@@ -1,3 +1,5 @@
+package src2;
+
 public class test {
 	public static void main(String[] args) {
 		int start_x, start_y, end_x, end_y;

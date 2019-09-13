@@ -1,5 +1,7 @@
+package src2;
+
 class piece {
-    char name;
+    Character name;
     char color;
     int loc_x,loc_y;    // index locations of piece
     piece(){}	// temp_piece
@@ -14,9 +16,6 @@ class piece {
         char[] temp = p.toCharArray();
         name = temp[1];
         color= temp[0];
-        get_rule();
     }
-    void get_rule(){        // sets rule parameters
 
-    }
 }
