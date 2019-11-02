@@ -1,0 +1,103 @@
+package src2;
+
+import java.util.ArrayList;
+
+class testt1 {
+	public ArrayList<Integer> position_matrix() {
+		String name = "b";        //manage piecces here
+		Integer x = 6;
+		Integer y = 2;
+		Integer xx;
+		Integer yy;
+		int temp1,n;
+		System.out.printf("\n x,y = %d,%d\n\n", x, y);
+		ArrayList<String> temp = new ArrayList<String>();
+		ArrayList<Integer> t11 = new ArrayList<Integer>();
+
+		switch (name) {
+			case "p":
+				// i<3 for 3 directions
+				yy = y + 1;
+				for (int i = 0; i < 3; i++) {
+					xx = x + i - 1;
+					temp.add(xx.toString() + yy.toString());
+				}
+				break;
+			case "r":
+				temp1 = 73;
+				n = temp1;                // from position matrix
+				while (n - 10 >= temp1%10) {			//up
+					n = n - 10;
+					t11.add(n);
+				}
+
+				n = temp1;
+				while (n + 1 <= (temp1/10)*10+7) {		//right
+					n = n + 1;
+					t11.add(n);
+				}
+
+				n = temp1;
+				while (n + 10 <= (temp1%10)+70) {		//down
+					n = n + 10;
+					t11.add(n);
+				}
+
+				n = temp1;
+				while (n - 1 >= (temp1/10)*10) {			//left
+					n = n - 1;
+					t11.add(n);
+				}
+				break;
+			case "n":
+
+				break;
+			case "b":
+				temp1 = 33;
+				n = temp1;                // from position matrix
+				while (n % 10 != 0 && n /10 != 0) {			//up-left
+					n = n - 11;
+					t11.add(n);
+				}
+
+				n = temp1;
+                while (n % 10 != 7 && n /10 != 0) {			//up-right
+                    n = n - 9;
+                    t11.add(n);
+                }
+
+				n = temp1;
+                while (n / 10 !=7 && n%70 != 0) {			//left-down
+                    n = n + 11;
+                    t11.add(n);
+                }
+
+				n = temp1;
+                while (n % 10 != 0 && n /10 != 7) {			//up-left
+                    n = n + 9;
+                    t11.add(n);
+                }
+
+				break;
+			case "q":
+
+				break;
+			case "k":
+
+				break;
+		}
+			return t11;
+	}
+}
+
+public class testt{
+	public static void main(String[] args) {
+		testt1 t = new testt1();
+		ArrayList<Integer> temp;
+		temp = t.position_matrix();
+		for (Integer name : temp) {
+			System.out.println(name);
+		}
+	}
+	
+}
